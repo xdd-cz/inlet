@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+:root {
+  --bg: #0f1220;
+  --panel: #afb7dd5f;
+  --panel2: #b8bdda5f;
+  --accent: #7ed55883;
+  --accent2: #7c5cff;
+  --good: #2f8b58;
+  --bad: #ff5c5c;
+  --text: #000000;
+  --muted: #383b47;
+  --border: #2b3055;
+}
+
+/* Base Setup */
+.gc-body {
+  font-family: "Google Sans Flex", sans-serif;
+  background: url("bg.png");
+  background-size: cover;
+  backgound-repeat: no-repeat,repeat;
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Container limits standard layouts across viewports */
+.max-width-container {
+  max-width: 640px !important;
+}
+
+/* Header Styles */
+.gc-header__title {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom Navigation Tabs */
+.gc-tabs__btn {
+  background: var(--panel) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  padding: 12px 10px !important;
+  transition: all 0.15s ease-in-out;
+}
+.gc-tabs__btn--active, 
+.gc-tabs__btn:hover {
+  background: var(--accent) !important;
+  border-color: transparent !important;
+  font-weight: 600;
+}
+
+/* Component Container Panels */
+.gc-card {
+  background: var(--panel);
+  border-color: var(--border) !important;
+  border-radius: 16px !important;
+}
+
+/* Form Custom Styles */
+.gc-field__input, 
+.gc-field__select {
+  background-color: var(--panel2) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 10px !important;
+}
+
+/* Main Action Buttons Styling */
+.gc-btn-primary {
+  background: var(--accent)!important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 12px !important;
+  padding: 11px 18px !important;
+}
+.gc-btn-secondary {
+  background: var(--panel2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  font-weight: 600;
+  border-radius: 12px !important;
+  padding: 11px 18px !important;
+}
+.btn:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed;
+}
+
+/* File Dropzones */
+.gc-dropzone {
+  border-color: var(--border) !important;
+  background: transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.gc-dropzone:hover {
+  border-color: var(--accent) !important;
+  color: var(--text) !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Added Page Item List UI */
+.gc-pageitem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+.gc-pageitem img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gc-pageitem .name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gc-pageitem button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+.gc-pageitem button:hover {
+  color: var(--text);
+}
+
+/* Alert States / Systems Feedback */
+.gc-status--info {
+  background-color: #1c2748;
+  color: #a9c0ff;
+}
+.gc-status--good {
+  background-color: #123321;
+  color: var(--good);
+}
+.gc-status--bad {
+  background-color: #3a1720;
+  color: var(--bad);
+}
+
+/* Custom Native Linear Strip Progressive Loader */
+.gc-progress {
+  height: 8px !important;
+  border-radius: 6px !important;
+  background-color: var(--panel2) !important;
+}
+.gc-progress__bar {
+  background: var(--accent) !important;
+  transition: width 0.25s ease;
+}
+
+/* Video Capture Hardware Boundary Box Frame Setup */
+.gc-camera__frame {
+  max-width: 360px;
+  aspect-ratio: 1/1;
+  border-radius: 16px !important;
+  border-color: var(--accent) !important;
+}
+
+/* Visual Matrix Bit Chip blocks */
+.gc-blockchip {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+  color: var(--muted);
+}
+.gc-blockchip.have {
+  background: var(--good);
+  color: #04220f;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+/* Media Graphic Render Previews Container Frame */
+.gc-viewer__frame {
+  min-height: 200px;
+  border-radius: 14px;
+}
+.gc-viewer__img {
+  max-height: 60vh;
+  animation: revealFrame 0.5s ease forwards;
+}
+
+/* Visual Reveal Top Headline Text Content */
+.gc-reveal-banner {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: revealFrame 0.6s ease forwards;
+}
+
+@keyframes revealFrame {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
